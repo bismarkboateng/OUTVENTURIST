@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 
-import { Home, Contact, New, Shop } from "./pages"
+import { Home, Contact, New, Shop, Productdetail } from "./pages"
 
 export default function App() {
   return (
@@ -9,6 +9,7 @@ export default function App() {
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/new" element={<New />} />
       <Route path="/shop" element={<Shop />} />
+      <Route path="/product-detail/:id" element={<Productdetail />} />
     </Routes>
   )
 }
