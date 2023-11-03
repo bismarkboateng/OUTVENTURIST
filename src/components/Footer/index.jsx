@@ -6,8 +6,8 @@ const index = () => {
     const ptag = 'font-bold text-xl'
   return (
     <div className='bg-gray-200 text-black md:flex flex-row justify-between px-2'>
-    <div className='md:flex flex-row justify-around gap-x-16'>
-      <div className='flex flex-row gap-x-16'>
+    <div className='lg:flex flex-row justify-around gap-x-16'>
+      <div className='flex flex-row gap-x-8'>
 
         {/* shop div */}
         <div>
@@ -47,7 +47,7 @@ const index = () => {
         </div>
       </div>
         {/* care div */}
-        <div className=''>
+        <div className='mr-28'>
         <div>
         <p className ={ptag}>Care</p>
             <ul>
@@ -83,6 +83,9 @@ const index = () => {
       By subscribing you agree to with our <div className='underline'>Privacy Policy</div> and provide consent to receive updates from our company.
       </div>
     </div>
+
+    <div className="h-0.5 bg-teal-800 mt-8"></div>
+
     </div>
   )
 }
