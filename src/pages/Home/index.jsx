@@ -1,9 +1,9 @@
-
-
+import Footer from '../../components/Footer'
 export default function index() {
   return (
-    <section>
-        Home component
-    </section>
+    <div>
+        <Footer />
+    </div>
+    
   )
 }
