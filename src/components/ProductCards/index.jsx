@@ -22,8 +22,11 @@ const index = () => {
 
 
         <div>
-          <div className="font-bold mt-4">{item.product}</div>
+          <div className="font-bold mt-4">{item.product}</div>  
+          <div className="flex gap-x-4">
+          <div className="line-through">{item.cancelled}</div>
           <div className="">{item.price}</div>
+          </div>
           <button className="bg-white text-teal-500 border-teal-500 border-2 w-full px-4 py-2 rounded">
           SEE DETAILS
           </button>
