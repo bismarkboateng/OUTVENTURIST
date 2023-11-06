@@ -1,9 +1,9 @@
-
+import { Navbar } from "../../components"
 
 export default function index() {
   return (
-    <section>
-        Home component
-    </section>
+    <main>
+      <Navbar />
+    </main>
   )
 }
