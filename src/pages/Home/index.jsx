@@ -4,7 +4,7 @@
 export default function index() {
   return (
     <section>
-        Home
+        Home component
     </section>
   )
 }
