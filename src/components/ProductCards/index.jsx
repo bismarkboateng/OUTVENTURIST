@@ -13,7 +13,7 @@ const index = () => {
       Sale
     </button>
   </div>
-  <div className="">
+  <div className="static">
   <img 
     src={item.image}
     className="p-4 shadow-lg transition-all duration-500 transform hover:scale-105 cursor-pointer "
