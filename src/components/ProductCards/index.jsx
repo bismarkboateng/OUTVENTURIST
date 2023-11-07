@@ -1,44 +1,65 @@
+
+import { Button} from ".."
 import { cardData } from "./data"
-const index = () => {
+
+export default function index() {
   return (
-    <div className="grid p-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {cardData.map((item) => (
-      <div key={item.id}>
-        <div className="flex flex-col p-6 shadow-lg">
-  <div className="flex justify-between z-10 top-8">
-  <div className="top-4 left-4 bg-opacity-10 text-[#c19b7c] border border-[#c19b7c] rounded-lg px-2 py-1 text-xs backdrop-blur-[5px]">
-      Free Delivery
-    </div>
-    <button className="top-4 right-4 text-red-700 border border-red-700 rounded-lg px-2 text-xs font-semibold backdrop-blur-[5px]">
-      Sale
-    </button>
-  </div>
-  <div className="z-0">
-  <img 
-    src={item.image}
-    className="p-4 shadow-lg transition-all duration-500 transform hover:scale-105 cursor-pointer "
-  />
-  </div>
+    <section className="mt-6 grid grid-cols-1 gap-y-4 md:grid-cols-2 gap-x-7
+      lg:grid-cols-3 lg:gap-y-9">
 
+      { cardData.map((data) => (
+        <div className="relative p-4 rounded shadow-card-shadow
+          transition-all duration-150 hover:shadow-card ease-in">
 
-        <div>
-          <div className="font-bold mt-4">{item.product}</div>  
-          <div className="flex gap-x-4">
-          <div className="line-through">{item.cancelled}</div>
-          <div className="">{item.price}</div>
+          <div className="absolute w-[78%] top-10 left-8 flex flex-row justify-between
+            gap-12 z-[20]">
+            <p className="border border-secondary-color rounded-full text-[0.6rem]
+              flex justify-center items-center backdrop-blur-[5px] font-SG
+              bg-[rgba(193,155,124,.1)] px-[0.5rem] text-secondary-color">
+              {data.delivery}
+            </p>
+            {data.sale ? (
+            <p className="font-SG font-bold text-text-color border 
+            border-text-color px-[0.5rem] rounded-full text-[0.7rem] backdrop-blur-[5px]">
+              {data.sale}
+            </p>
+            ): ("")}
           </div>
-          <button className="bg-white text-teal-500 border-teal-500 border-2 w-full px-4 py-2 rounded">
-          SEE DETAILS
-          </button>
-        </div>
-        </div>
-        
-    </div>
-    ))}
-    
 
-    </div>
+          <div className="border border-gray-200 w-[100%]">
+            <img
+              src={data.image}
+              alt="product"
+              className="rounded object-contain transition-all
+              duration-150 ease hover:scale-105"
+            />
+          </div>
+
+          <div className="mt-3">
+            <h1 className="text-base font-SG font-bold leading-6">
+              {data.product}
+            </h1>
+            <div className="flex flex-row justify-between mt-2">
+              {data.cancelled ? (
+                  <p className="text-base font-SG leading-6 cursor-pointer line-through">
+                    {data.cancelled}
+                  </p>
+              ) : ("")  
+              }
+              <p className="font-SG text-base text-text-color cursor-pointer">
+                {data.price}
+              </p>
+            </div>
+            <Button
+              className="py-2 px-5 border border-primary-color text-primary-color
+              text-[12.8px] font-SG font-medium rounded w-[100%] mt-3"
+            >
+              SEE DETAILS
+            </Button>
+          </div>
+        </div>
+      ))}
+
+    </section>
   )
 }
-
-export default index

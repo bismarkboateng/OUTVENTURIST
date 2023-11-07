@@ -7,6 +7,7 @@ export default function index() {
       lg:h-[60vh] 2xl:h-[44vh]">
         <Banner />
 
+
         <section className="relative w-[100%] h-[100%] overflow-clip
           2xl:w-[65%] mx-auto">
           <img

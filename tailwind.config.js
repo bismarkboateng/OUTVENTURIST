@@ -17,10 +17,13 @@ module.exports = {
       colors: {
         'primary-color': '#3c6469',
         'secondary-color': '#c19b7c',
+        'text-color': '#b00c00'
       },
 
       boxShadow: {
-        'button-shadow': '0 2px 5px rgba(0,0,0,.2)'
+        'button-shadow': '0 2px 5px rgba(0,0,0,.2)',
+        'card': '0 20px 20px rgba(0,0,0,.1), 0 2px 5px rgba(0,0,0,.1)',
+        'card-shadow': '0 10px 20px rgba(0,0,0,.05), 0 2px 5px rgba(0,0,0,.05)',
       },
 
       fontFamily: {
