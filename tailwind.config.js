@@ -15,7 +15,12 @@ module.exports = {
       },
 
       colors: {
-        'primary-color': '#3c6469'
+        'primary-color': '#3c6469',
+        'secondary-color': '#c19b7c',
+      },
+
+      boxShadow: {
+        'button-shadow': '0 2px 5px rgba(0,0,0,.2)'
       },
 
       fontFamily: {

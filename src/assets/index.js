@@ -6,3 +6,6 @@ export { default as Ship } from "./svg/ship.svg"
 export { default as Hero } from "./images/Hero.webp"
 export { default as LineBow } from "./svg/lineBow.svg"
 export { default as LineBow01 } from "./svg/lineBow-01.svg"
+
+// product detail
+export { default as Product } from "./images/product.png"

@@ -9,7 +9,7 @@ export default function App() {
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/new" element={<New />} />
       <Route path="/shop" element={<Shop />} />
-      <Route path="/product-detail/:id" element={<Productdetail />} />
+      <Route path="/product/:id" element={<Productdetail />} />
     </Routes>
   )
 }
