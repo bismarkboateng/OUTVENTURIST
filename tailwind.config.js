@@ -9,7 +9,30 @@ module.exports = {
     "./src/**/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        "blur": "rgba(0, 0, 0, 0.70)"
+      },
+
+      colors: {
+        'primary-color': '#3c6469'
+      },
+
+      fontFamily: {
+        'SG': ['Schibsted Grotesk', 'sans-serif']
+      },
+
+      keyframes: {
+        slideDown: {
+          '0%': { top: '100%'},
+          '100%': { top: '190%'}
+        }
+      },
+
+      animation: {
+        slideDown: 'slideDown 0.3s ease-in'
+      }
+    },
   },
   plugins: [],
 }

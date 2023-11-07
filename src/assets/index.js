@@ -1,0 +1,8 @@
+export { default as Logo } from "./svg/Logo.svg"
+export { default as Cart } from "./svg/cart.svg"
+export { default as Ship } from "./svg/ship.svg"
+
+// herosection
+export { default as Hero } from "./images/Hero.webp"
+export { default as LineBow } from "./svg/lineBow.svg"
+export { default as LineBow01 } from "./svg/lineBow-01.svg"

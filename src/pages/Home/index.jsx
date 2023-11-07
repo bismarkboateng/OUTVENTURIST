@@ -1,9 +1,10 @@
-
+import { Navbar, Herosection } from "../../components"
 
 export default function index() {
   return (
-    <section>
-        Home component
-    </section>
+    <main>
+      <Navbar />
+      <Herosection />
+    </main>
   )
 }

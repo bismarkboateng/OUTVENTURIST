@@ -1,2 +1,5 @@
 export { default as Navbar } from "./Navbar"
 export { default as Herosection } from "./Herosection"
+export { default as Navlinks } from "./Navlinks"
+export { default as Banner } from "./Banner"
+export { default as Button } from "./Button"
