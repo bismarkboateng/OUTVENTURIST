@@ -10,6 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        "blur": "rgba(0, 0, 0, 0.70)"
+      },
+
       colors: {
         'primary-color': '#3c6469'
       },
