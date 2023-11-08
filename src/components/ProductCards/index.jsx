@@ -1,13 +1,15 @@
-
+import { Link } from "react-router-dom"
 import { Button} from ".."
-import { cardData } from "./data"
 
-export default function index() {
+
+
+export default function index({ products }) {
+  
   return (
     <section className="mt-6 grid grid-cols-1 gap-y-4 md:grid-cols-2 gap-x-7
       lg:grid-cols-3 lg:gap-y-9">
 
-      { cardData.map((data) => (
+      { products.map((data) => (
         <div key={data.id} className="relative p-4 rounded shadow-card-shadow
           transition-all duration-150 hover:shadow-card ease-in">
 
@@ -15,11 +17,11 @@ export default function index() {
             gap-12 z-[20]">
             <p className="border border-secondary-color rounded-full text-[0.6rem]
               flex justify-center items-center backdrop-blur-[5px] font-SG
-              bg-[rgba(193,155,124,.1)] px-[0.5rem] text-secondary-color">
+              bg-[rgba(193,155,124,.1)] px-[0.5rem] text-secondary-color cursor-pointer">
               {data.delivery}
             </p>
             {data.sale ? (
-            <p className="font-SG font-bold text-text-color border 
+            <p className="font-SG font-bold text-text-color border cursor-pointer
             border-text-color px-[0.5rem] rounded-full text-[0.7rem] backdrop-blur-[5px]">
               {data.sale}
             </p>
@@ -50,12 +52,14 @@ export default function index() {
                 {data.price}
               </p>
             </div>
-            <Button
-              className="py-2 px-5 border border-primary-color text-primary-color
-              text-[12.8px] font-SG font-medium rounded w-[100%] mt-3"
-            >
-              SEE DETAILS
-            </Button>
+            <Link style={{ textDecoration: "none" }} to={`/product/${data.id}`}>
+              <Button
+                className="py-2 px-5 border border-primary-color text-primary-color
+                text-[12.8px] font-SG font-medium rounded w-[100%] mt-3"
+              >
+                SEE DETAILS
+              </Button>
+            </Link>
           </div>
         </div>
       ))}

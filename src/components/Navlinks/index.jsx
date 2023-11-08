@@ -4,11 +4,11 @@ import { Link } from "react-router-dom"
 export default function index(props) {
   return (
     <ul className={props.className}>
-        <Link style={{ textDecoration: "none" }} to={"/new"}>
+        <Link style={{ textDecoration: "none" }} to={"/new-in"}>
           <li className={props.liStyles}>New in</li>
         </Link>
 
-        <Link style={{ textDecoration: "none" }} to={"/shop"}>
+        <Link style={{ textDecoration: "none" }} to={"/shop-all-products"}>
           <li className={props.liStyles}>Shop</li>
         </Link>
 

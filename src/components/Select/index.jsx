@@ -1,14 +1,14 @@
 import { useState } from "react"
 
-import { waists } from "./option-data"
+import { waists, sizes } from "./option-data"
 
 
-export default function index() {
-  const [selectedWaist, setSelectedWaist] = useState("")
+export default function index({ name }) {
+  const [selectedOption, setSelectedOption] = useState("")
   const [quantity, setQuantity] = useState("1")
 
-  const onSelectWaistHandler = (event) => {
-    setSelectedWaist(event.target.value)   
+  const onSelectOptionHandler = (event) => {
+    setSelectedOption(event.target.value)   
   }
 
   const onInputChangeHandler = (event) => {
@@ -17,26 +17,51 @@ export default function index() {
 
   return (
     <section className="mt-7">
-      <section>
-        <p className="text-base font-SG leading-6">Waist</p>
-        <select
-          value={selectedWaist}
-          onChange={onSelectWaistHandler}
-          className="border border-[#c19b7c]
-            outline-none py-2 pl-2 w-[100%] bg-white
-            mt-2 font-SG text-base rounded"
-        >
-          <option>Select Waist</option>
-          {waists.map((waist) => (
-            <option
-              value={waist.name}
-              key={waist.id}
-            >
-              {waist.name}
-            </option>
-          ))}
-        </select>
-      </section>
+      {name?.includes("Trousers") && (
+        <section>
+          <p className="text-base font-SG leading-6">Waist</p>
+          <select
+            value={selectedOption}
+            onChange={onSelectOptionHandler}
+            className="border border-[#c19b7c]
+              outline-none py-2 pl-2 w-[100%] bg-white
+              mt-2 font-SG text-base rounded"
+          >
+            <option>Select Waist</option>
+            {waists.map((waist) => (
+              <option
+                value={waist.name}
+                key={waist.id}
+              >
+                {waist.name}
+              </option>
+            ))}
+          </select>
+        </section>
+      )}
+
+      {name?.includes("Boots") && (
+        <section>
+          <p className="text-base font-SG leading-6">Size</p>
+          <select
+            value={selectedOption}
+            onChange={onSelectOptionHandler}
+            className="border border-[#c19b7c]
+              outline-none py-2 pl-2 w-[100%] bg-white
+              mt-2 font-SG text-base rounded"
+          >
+            <option>Select Size</option>
+            {sizes.map((size) => (
+              <option
+                value={size.size}
+                key={size.id}
+              >
+                {size.size}
+              </option>
+            ))}
+          </select>
+        </section>
+      )}
 
       <section className="mt-3">
         <p className="text-base font-SG leading-6">Quantity</p>

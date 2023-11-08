@@ -1,6 +1,12 @@
+import { useSelector } from "react-redux"
+
 import { Navbar, Herosection, ProductCards, Order } from "../../components"
 
+
+
 export default function index() {
+  const product = useSelector((state) => state.products.products)
+  const products = product.slice(0, 3)
   return (
     <main>
       <Navbar />
@@ -15,7 +21,9 @@ export default function index() {
             SEE ALL 🡢
           </p>
         </div>
-        <ProductCards />
+        <ProductCards
+          products={products}
+        />
         <Order />
         <div className="mt-10">
           activity

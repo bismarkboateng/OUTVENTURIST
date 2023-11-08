@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     quantity: 0,
-    cartItem: []
+    cartItems: []
 }
 
 export const cartSlice = createSlice({
@@ -10,7 +10,10 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            // add to cart logic
+            // get the product id
+            // check if it already exists in the cart Item
+            // increment the quantity if so,
+            // else add to the cart
         },
 
         removeFromCart: (state, action) => {

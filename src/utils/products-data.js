@@ -1,11 +1,11 @@
-export const cardData=[
+export const products = [
     { 
         image:'https://assets.website-files.com/64515ac135d5d28b9772c12b/64b01f1e984b25871696165d_JAcket%202.png',
         product:'TerraVenture Waterproof Pro Jacket',
         price:'$ 39.99 USD',
         delivery: "FREE DELIVERY",
-        sale: "SALE",
-        id: Math.random()
+        stars: "3.5",
+        id: "100101"
     },
     {
         image:'https://assets.website-files.com/64515ac135d5d28b9772c12b/6453918eed98572f73df64b1_Trousers%203-min.png',
@@ -13,7 +13,8 @@ export const cardData=[
         cancelled:'$ 89.99',
         price:'$ 39.99 USD',
         delivery: "FREE DELIVERY",
-        id: Math.random()
+        sale: "SALE",
+        id: "111001"
     },
     { 
         image:'https://assets.website-files.com/64515ac135d5d28b9772c12b/6453919200a741a8bb64f6d1_Trousers%201-min.png',
@@ -22,7 +23,7 @@ export const cardData=[
         price:'$ 89.99 USD',
         delivery: "FREE DELIVERY",
         sale: "SALE",
-        id: Math.random()
+        id: "001010"
     },
     { 
         image:'https://assets.website-files.com/64515ac135d5d28b9772c12b/64aefe0bac97dcbf3cae984b_Bag%201%20(2)-p-500.png',
@@ -30,26 +31,26 @@ export const cardData=[
         price:'$ 89.99 USD', 
         delivery: "FREE DELIVERY",
         sale: "SALE",
-        id: Math.random()
+        id: "110011"
     },
     { 
         image:'https://assets.website-files.com/64515ac135d5d28b9772c12b/64a1ab9d14f1a64564995071_b9099b3f-64ba-4346-8a1d-73549d6de63c-p-500.png',
         product:'Hiking Boots',
         price:'$ 179.99 USD',
         delivery: "FREE DELIVERY",
-        id: Math.random()
+        id: "010110"
     },
     { 
         image:'https://assets.website-files.com/64515ac135d5d28b9772c12b/64522cc4e651390c40254e95_Boots%202-p-500.png',
         product:'TrailMaster Hiking Boots',
         price:'$ 179.99 USD',
         delivery: "FREE DELIVERY",
-        id: Math.random()
+        id: "011101"
     },
     {   image:'https://assets.website-files.com/64515ac135d5d28b9772c12b/64522ce9647c2413a39071ef_Boots%203-min.png',
         product:'TrailMaster Pro Hiking Boots',
         price:'$ 179.99 USD',
         delivery: "FREE DELIVERY",
-        id: Math.random()
+        id: "101101"
     }
 ]

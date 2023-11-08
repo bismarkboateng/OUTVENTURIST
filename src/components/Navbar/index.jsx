@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { GrMenu } from "react-icons/gr"
+import { Link } from "react-router-dom"
 import { AiOutlineClose } from "react-icons/ai"
 
 import { Logo, Cart } from "../../assets"
@@ -18,11 +19,13 @@ export default function index() {
         <div className="w-[90%] 2xl:w-[65%] mx-auto relative top-0 mt-2 lg:mt-4 
         flex flex-row items-center ">
           <div className="flex flex-row items-center gap-1 mr-auto">
-            <img
-              src={Logo}
-              alt="ovunterist"
-              className="w-10 h-10"
-            />
+            <Link style={{ textDecoration: "none"}} to={"/"}>
+              <img
+                src={Logo}
+                alt="ovunterist"
+                className="w-10 h-10"
+              />
+            </Link>
 
             <div>
               <h2 className="text-base md:text-2xl font-bold tracking-[-0.03rem] font-SG leading-4

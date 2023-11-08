@@ -7,8 +7,8 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/contact-us" element={<Contact />} />
-      <Route path="/new" element={<New />} />
-      <Route path="/shop" element={<Shop />} />
+      <Route path="/new-in" element={<New />} />
+      <Route path="/shop-all-products" element={<Shop />} />
       <Route path="/product/:id" element={<Productdetail />} />
     </Routes>
   )

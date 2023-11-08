@@ -41,3 +41,39 @@ export const waists = [
         id:Math.random(),
     },
 ]
+
+
+export const sizes = [
+    { 
+        size: 6,
+        id: Math.random(),
+    },
+    { 
+        size: 7,
+        id: Math.random(),
+    },
+    { 
+        size: 8,
+        id: Math.random(),
+    },
+    { 
+        size: 9,
+        id: Math.random(),
+    },
+    { 
+        size: 10,
+        id: Math.random(),
+    },
+    { 
+        size: 11,
+        id: Math.random(),
+    },
+    { 
+        size: 12,
+        id: Math.random(),
+    },
+    { 
+        size: 13,
+        id: Math.random(),
+    }
+]
