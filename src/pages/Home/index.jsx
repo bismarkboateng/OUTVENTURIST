@@ -1,4 +1,4 @@
-import { Navbar, Herosection, ProductCards } from "../../components"
+import { Navbar, Herosection, ProductCards, Order } from "../../components"
 
 export default function index() {
   return (
@@ -16,6 +16,10 @@ export default function index() {
           </p>
         </div>
         <ProductCards />
+        <Order />
+        <div className="mt-10">
+          activity
+        </div>
       </section>
     </main>
   )

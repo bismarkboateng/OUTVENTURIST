@@ -14,6 +14,11 @@ module.exports = {
         "blur": "rgba(0, 0, 0, 0.70)"
       },
 
+      backgroundImage: {
+        'order-image': 'url("./src/assets/images/order.webp")',
+        'bg-gradient': 'linear-gradient(236deg, rgba(244,244,244,.21), rgba(255,255,255,.08))'
+      },
+      
       colors: {
         'primary-color': '#3c6469',
         'secondary-color': '#c19b7c',

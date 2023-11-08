@@ -8,7 +8,7 @@ export default function index() {
       lg:grid-cols-3 lg:gap-y-9">
 
       { cardData.map((data) => (
-        <div className="relative p-4 rounded shadow-card-shadow
+        <div key={data.id} className="relative p-4 rounded shadow-card-shadow
           transition-all duration-150 hover:shadow-card ease-in">
 
           <div className="absolute w-[78%] top-10 left-8 flex flex-row justify-between
