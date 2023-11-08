@@ -1,4 +1,4 @@
-import { shop , navigate, account ,care } from './footerlinks'
+import { shop , navigate, account ,care } from '../Footerlinks'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -12,9 +12,9 @@ const index = () => {
     const social = 'text-teal-700	hover:text-teal-500 transition duration-500 ease-in-out cursor-pointer'
   return (
     <div style={{fontFamily: 'Schibsted Grotesk, sans-serif'}} className='bg-gray-200 md:p-16'>
-    <div className='text-black md:flex flex-row justify-between px-2'>
-    <div className='lg:flex flex-row justify-around gap-x-16'>
-      <div className='flex flex-row gap-x-8'>
+    <div className='text-black flex flex-col gap-y-8 lg:flex-row justify-between px-2'>
+    <div className='flex flex-col gap-y-8 lg:flex-row justify-around gap-x-16'>
+      <div className='flex flex-col gap-y-8 md:flex-row justify-between gap-x-8'>
 
         {/* shop div */}
         <div>
@@ -69,8 +69,9 @@ const index = () => {
         </div>
     </div>
 
+
     {/* newsletter email div */}
-    <div className='md:mx-8'>
+    <div className=''>
       <div className='font-bold mb-4 text-xl'>Subscribe</div>
       <div className={smalltext}>Join our newsletter and get vouchers and exclusive deals straight to your inbox.</div>
       <div className="flex items-center gap-x-4 my-2 ">
