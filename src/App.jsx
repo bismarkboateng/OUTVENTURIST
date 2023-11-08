@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 
-import { Home, New, Shop, Productdetail, Contact } from "./pages"
+import { Home, New, Shop, Productdetail, Contact, Watersports } from "./pages"
 
 export default function App() {
   return (
@@ -10,6 +10,7 @@ export default function App() {
       <Route path="/new" element={<New />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/product-detail/:id" element={<Productdetail />} />
+      <Route path="/watersports" element={<Watersports />} />
     </Routes>
   )
 }
