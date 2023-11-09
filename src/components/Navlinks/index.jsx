@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { onActivityClick } from "../../features/activity/activitySlice"
 
 
 export default function index(props) {
+  const dispatch = useDispatch()
+  
+  const onActivityClickHandler = () => {
+    dispatch(onActivityClick())
+  }
   return (
     <ul className={props.className}>
         <Link style={{ textDecoration: "none" }} to={"/new-in"}>
@@ -13,7 +20,11 @@ export default function index(props) {
         </Link>
 
         <Link style={{ textDecoration: "none" }}>
-          <li className={props.liStyles}>Activity</li>
+          <li
+            onClick={onActivityClickHandler}
+            className={props.liStyles}>
+            Activity
+          </li>
         </Link>
         <div 
           className="border border-gray-100 mb-6" 

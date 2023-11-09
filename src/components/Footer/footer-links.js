@@ -1,15 +1,15 @@
 export const shop = [
-    { title: "Home", id:Math.random() },
-    { title: "New in", id:Math.random() },
-    { title: "Store Locator", id:Math.random() },
-]
-
-export const navigate = [
     { title: "By activity", id:Math.random() },
     { title: "Woman", id:Math.random() },
     { title: "Men", id:Math.random() },
     { title: "Rucksacks", id:Math.random() },
     { title: "Footwear", id:Math.random() },
+]
+
+export const navigate = [
+    { title: "Home", id:Math.random() },
+    { title: "New in", id:Math.random() },
+    { title: "Store Locator", id:Math.random() },
 ]
 
 export const account = [

@@ -7,8 +7,6 @@ import { Home, New, Shop, Productdetail, Contact, Watersports } from "./pages"
 
 export default function App() {
   useEffect(() => {
-    AOS.init();
-
     AOS.init({
       duration: 200,
       easing: 'ease-in',

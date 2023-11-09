@@ -37,7 +37,7 @@ export default function index() {
 
   return (
     <section className="w-[90%]  mx-auto md:w-[50%] md:mx-0 md:ml-[5%] mt-9
-       2xl:w-[40%] 2xl:ml-[17.5%]">
+       2xl:w-[40%] 2xl:ml-[17.5%] mb-10">
       <p className="w-[100%] text-base font-SG leading-6">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Suspendisse varius enim in eros elementum tristique. 

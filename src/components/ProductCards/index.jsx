@@ -34,6 +34,8 @@ export default function index({ products }) {
               alt="product"
               className="rounded object-contain transition-all
               duration-150 ease hover:scale-105"
+              data-aos="zoom-in"
+              data-aos-duration="300"
             />
           </div>
 

@@ -8,7 +8,7 @@ export default function index({title, info, img, classStyle, imgStyle}) {
             <p className="mb-3 text-black font-SG text-[0.9em]">{info}</p>
           <ActivityLinks />
         </div>
-        <img src={img} alt=""  className={imgStyle} />
+        <img src={img} alt=""  className={imgStyle} data-aos="zoom-in" data-aos-duration="300" />
       </section>
     )
   }

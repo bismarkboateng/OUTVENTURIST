@@ -1,6 +1,9 @@
 import { useSelector } from "react-redux"
 
-import { Navbar, Herosection, Activity, ProductCards, Order } from "../../components"
+import { 
+  Navbar, Herosection, Activity,
+  ProductCards, Order, Footer,
+} from "../../components"
 
 
 export default function index() {
@@ -25,6 +28,7 @@ export default function index() {
         <Order />
       </section>
       <Activity />
+      <Footer />
     </main>
   )
 }

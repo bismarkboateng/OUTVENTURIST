@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { createPortal } from "react-dom"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
@@ -5,10 +6,11 @@ import { useDispatch } from "react-redux"
 
 
 import { Button } from ".."
+import { Close } from "../../assets"
 import { removeFromCart } from "../../features/cart/cartSlice"
-import { useState } from "react"
 
-export default function index() {
+
+export default function index(props) {
   const cartItems = useSelector((state) => state.cart.cartItems)
   const total = useSelector((state) => state.cart.total)
   const [onCheckout, setOnCheckout] = useState(false)
@@ -24,10 +26,18 @@ export default function index() {
         className="fixed absolute top-[10%] right-[6%] 2xl:right-[18%] z-[200]
         w-[90%] md:w-[35%] lg:w-[30%] 2xl:w-[20%] mx-auto bg-[#f4f4f4] rounded-md 
         shadow-card-shadow">
-        <p className="text-primary-color bg-white font-SG font-bold leading-6 pt-1 pb-1 pl-1
-            rounded-md"> 
-            Your Basket
-        </p>
+        <div className="flex flex-row bg-white items-center justify-between p-1">
+            <p className="text-primary-color  font-SG font-bold leading-6 pt-1 pb-1 pl-1
+                rounded-md"> 
+                Your Basket
+            </p>
+            <img
+                src={Close}
+                alt="close"
+                className="w-5 h-5 cursor-pointer"
+                onClick={props.onMobile}
+            />
+        </div>
         <div 
             className="flex flex-col items-center justify-center
         ">
@@ -72,7 +82,7 @@ export default function index() {
                 </>
                 ))}
                 <div className="w-[95%] mx-auto">
-                    Subtotal: <strong>{total.toFixed(2)}</strong>
+                    Subtotal: <strong>$ {total.toFixed(2)}</strong>
                     <Button
                         className="mt-3 text-xs bg-primary-color text-white
                         py-2 2xl:py-3 px-6 font-SG w-[100%] rounded 

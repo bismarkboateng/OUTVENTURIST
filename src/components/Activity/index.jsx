@@ -20,7 +20,7 @@ export default function index() {
 
     return (
       <section className="pt-16 px-5 bg-[url(https://assets.website-files.com/64515ac135d5d25fb072c123/64527869e17c7284b3cc7845_Lines%20Bow%201_1.svg)]
-        h-screen bg-left 2xl:px-0 2xl:w-[65%] mx-auto">
+        bg-left 2xl:px-0  lg:w-[95%] 2xl:w-[65%] mx-auto">
         <h1 className="text-[#3C6469] text-[1.8em] font-SG font-bold sm:mb-12">By Activity</h1>
         <div className="md:flex gap-10 lg:gap-7">
         <div className="">
@@ -53,8 +53,8 @@ export default function index() {
             title={Hiking.head}
             info={Hiking.description}
             img={Hiking.img}
-            imgStyle={"md:h-[450px] md:w-[100%] object-cover hover:scale-[1.02] transition duration-[0.5s] ease-in-out hover:cursor-pointer"}
-            classStyle={"hidden md:block bg-white mb-10 rounded-md shadow-lg hover:shadow-2xl"}
+            imgStyle={"md:h-[450px] md:w-[100%] object-cover  transition duration-[0.5s] ease-in-out hover:cursor-pointer"}
+            classStyle={"hidden md:block bg-white mb-10 rounded-md shadow-lg "}
           />
         </div>
         </div>

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 
 
-import { Navbar, Banner, Select, Button, Productcontent} from "../../components"
+import { Navbar, Banner, Select, Button, Productcontent, Footer} from "../../components"
 import { AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { BiSolidStarHalf } from "react-icons/bi"
 import { addToCart, updateTotal } from "../../features/cart/cartSlice"
@@ -53,6 +53,7 @@ export default function index() {
             src={productDetail.image}
             alt={productDetail.name}
             className="w-[100%] md:w-[60%] lg:w-[65%] object-cover border border-gray-200"
+            data-aos="zoom-in"
           />
           <section className="w-[100%] md:w-[40%] lg:w-[35%] lg:mt-8 2xl:mt-0">
             <h1 className="text-2xl 2xl:text-[32px] tracking-[-0.05rem] font-bold font-SG
@@ -103,6 +104,7 @@ export default function index() {
           </section>
         </section>
       <Productcontent />
+      <Footer />
     </section>
   )
 }

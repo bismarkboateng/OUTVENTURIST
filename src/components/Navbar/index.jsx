@@ -1,17 +1,19 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { GrMenu } from "react-icons/gr"
+import { GoArrowRight } from "react-icons/go"
 import { Link } from "react-router-dom"
 import { AiOutlineClose } from "react-icons/ai"
 import { useSelector } from "react-redux"
 
 import { Logo, Cart } from "../../assets"
-import { Basket } from ".."
-import { Navlinks} from ".."
+import { activity } from "../Activity/activity-data"
+import { Basket, Navlinks, Mobile } from ".."
 
 
 
 export default function index() {
   const quantity = useSelector((state) => state.cart.quantity)
+  const onActivityClick = useSelector((state) => state.activity.click)
   const [mobile, setMobile] = useState(false)
   const [onBasketClick, setOnBasketClick] = useState(false)
 
@@ -25,8 +27,34 @@ export default function index() {
   }
 
   return (
-    <nav className="sticky top-0 z-[100] bg-white pt-1 pb-2">
-        { onBasketClick && <Basket />}
+    <nav className="relative sticky top-0 z-[100] bg-white pt-1 pb-2">
+        { onBasketClick && <Basket  onMobile={onBasketClickHandler}/>}
+        { onActivityClick && (
+          <div className=" hidden lg:block absolute top-[90%] right-[21.5%] rounded-md 
+            shadow-card-shadow"
+            data-aos="fade-up">
+            {activity.map((item) => (
+              <div className="flex flex-row items-center bg-white w-[100%]">
+                <div className="w-[40%] ml-4">
+                  <h1 className="text-[32px] font-SG text-primary-color font-bold">
+                    {item.head}
+                  </h1>
+                  <div className="flex flex-row  items-center gap-1 text-[#c19b7c]">
+                    <p>CHECK IT OUT</p>
+                    <span><GoArrowRight /></span>
+                  </div>
+                </div>
+                <img
+                  src={item.img}
+                  alt="image"
+                  className="h-[150px] w-[300px] object-cover"
+                  data-aos="zoom-in"
+                />
+              </div>
+            ))}
+          </div>
+        )}
+
         <div className="w-[90%] 2xl:w-[65%] mx-auto relative top-0 mt-2 lg:mt-4 
         flex flex-row items-center ">
           <div className="flex flex-row items-center gap-1 mr-auto">
@@ -72,14 +100,7 @@ export default function index() {
             />
           </i>)}
 
-          {mobile && (
-            <div className="absolute top-[190%] left-0 bg-white w-full h-screen
-              animate-slideDown">
-              <Navlinks 
-                liStyles = "text-lg text-primary-color font-SG leading-7 pb-5"
-              />
-            </div>
-          )}
+          {mobile && (<Mobile />)}
 
           <div
             onClick={onBasketClickHandler} 

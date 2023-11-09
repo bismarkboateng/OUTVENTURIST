@@ -16,7 +16,7 @@ export default function AgreeButton(){
                 <div className={`w-10 rounded-full border p-1 border-[#c19b7c] transition-all ease-in duration-[300ms] flex ${agree ? 'justify-end bg-[#3c6469]' : 'bg-white justify-start'}`} onClick={handleAgree}>
                     <div className={`rounded-full p-1 w-3 h-3 bg-[#c19b7c]`}></div>
                 </div>
-                <span className="text-[1rem]">I accept the <span className="underline">Terms</span></span>
+                <span className="text-[1rem] font-SG">I accept the <span className="underline">Terms</span></span>
             </label>
         </>
     )

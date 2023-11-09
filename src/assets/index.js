@@ -10,3 +10,5 @@ export { default as LineBow01 } from "./svg/lineBow-01.svg"
 // product detail
 export { default as Product } from "./images/product.png"
 export { default as Order } from "./images/order.webp"
+
+export { default as Close } from "./svg/close_window.svg"
