@@ -1,6 +1,9 @@
 import { useSelector } from "react-redux"
 
-import { Navbar, ProductCards, Order, Banner } from "../../components"
+import { 
+  Navbar, ProductCards, Order, 
+  Banner, Activity 
+} from "../../components"
 
 export default function index() {
   const products = useSelector((state) => state.products.products)
@@ -13,15 +16,12 @@ export default function index() {
         <h1 className="text-primary-color text-2xl font-SG font-bold leading-[33.6px]">
           New in
         </h1>
-        
         <ProductCards
           products={products}
         />
         <Order />
-        <div className="mt-10">
-          activity
-        </div>
       </section>
+      <Activity />
     </main>
   )
 }

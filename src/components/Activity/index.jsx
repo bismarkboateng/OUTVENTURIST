@@ -19,15 +19,16 @@ export default function index() {
 
 
     return (
-      <section className="pt-16 px-6 bg-[url(https://assets.website-files.com/64515ac135d5d25fb072c123/64527869e17c7284b3cc7845_Lines%20Bow%201_1.svg)] h-screen bg-left">
+      <section className="pt-16 px-5 bg-[url(https://assets.website-files.com/64515ac135d5d25fb072c123/64527869e17c7284b3cc7845_Lines%20Bow%201_1.svg)]
+        h-screen bg-left 2xl:px-0 2xl:w-[65%] mx-auto">
         <h1 className="text-[#3C6469] text-[1.8em] font-SG font-bold sm:mb-12">By Activity</h1>
-        <div className="md:flex gap-10 ">
+        <div className="md:flex gap-10 lg:gap-7">
         <div className="">
           <ActivityCard
             title={Watersports.head}
             info={Watersports.description}
             img={Watersports.img}
-            classStyle={"sm:flex sm:items-center bg-white w-[100%] flex-row mb-10 rounded-md shadow-lg hover:shadow-2xl "}
+            classStyle={"sm:flex sm:items-center bg-white w-[100%] flex-row mb-10 lg:mb-7 rounded-md shadow-lg hover:shadow-2xl "}
             imgStyle={"sm:w-[60%] sm:h-[320px] md:w-[50%] md:h-50% object-cover"}
           />
 
@@ -44,7 +45,7 @@ export default function index() {
             info={Camping.description} 
             img={Camping.img} 
             classStyle={"sm:flex sm:items-center bg-white w-[100%] flex-row mb-10 rounded-md shadow-lg hover:shadow-2xl"}
-            imgStyle={"sm:w-[60%] sm:h-[320px] md:w-[50%] object-cover"}
+            imgStyle={"sm:w-[60%] sm:h-[320px] md:w-[50%] xl:w-[45.5%] object-cover"}
           />
         </div>
         <div className="">
