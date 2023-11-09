@@ -39,7 +39,7 @@ export default function index({ products }) {
 
           <div className="mt-3">
             <h1 className="text-base font-SG font-bold leading-6">
-              {data.product}
+              {data.name}
             </h1>
             <div className="flex flex-row justify-between mt-2">
               {data.cancelled ? (
@@ -49,7 +49,7 @@ export default function index({ products }) {
               ) : ("")  
               }
               <p className="font-SG text-base text-text-color cursor-pointer">
-                {data.price}
+                {`$ ${data.price} USD`}
               </p>
             </div>
             <Link style={{ textDecoration: "none" }} to={`/product/${data.id}`}>

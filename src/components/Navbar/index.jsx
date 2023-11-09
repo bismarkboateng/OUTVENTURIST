@@ -1,21 +1,32 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { GrMenu } from "react-icons/gr"
 import { Link } from "react-router-dom"
 import { AiOutlineClose } from "react-icons/ai"
+import { useSelector } from "react-redux"
 
 import { Logo, Cart } from "../../assets"
+import { Basket } from ".."
 import { Navlinks} from ".."
 
 
 
 export default function index() {
+  const quantity = useSelector((state) => state.cart.quantity)
   const [mobile, setMobile] = useState(false)
+  const [onBasketClick, setOnBasketClick] = useState(false)
+
 
   const toggleMobile = () => {
     setMobile(prevMobile => !prevMobile)
   }
+
+  const onBasketClickHandler = () => {
+    setOnBasketClick(prevValue => !prevValue)
+  }
+
   return (
     <nav className="sticky top-0 z-[100] bg-white pt-1 pb-2">
+        { onBasketClick && <Basket />}
         <div className="w-[90%] 2xl:w-[65%] mx-auto relative top-0 mt-2 lg:mt-4 
         flex flex-row items-center ">
           <div className="flex flex-row items-center gap-1 mr-auto">
@@ -70,15 +81,17 @@ export default function index() {
             </div>
           )}
 
-          <div className="flex flex-row items-center 
-            px-[2px] py-[2px] bg-[#c19b7c] h-[35px] rounded">
+          <div
+            onClick={onBasketClickHandler} 
+            className="flex flex-row items-center 
+            px-[2px] py-[2px] bg-[#c19b7c] h-[35px] rounded cursor-pointer">
               <img
                 src={Cart}
                 alt="cart icon"
                 className="w-5 ml-2"
               />
               <p className="ml-2 py-[3px] px-[4px] bg-white font-semibold
-              text-primary-color">0</p>
+              text-primary-color">{quantity}</p>
           </div>
 
         </div>

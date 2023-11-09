@@ -6,25 +6,39 @@ import { useEffect, useState } from "react"
 import { Navbar, Banner, Select, Button, Productcontent} from "../../components"
 import { AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { BiSolidStarHalf } from "react-icons/bi"
+import { addToCart, updateTotal } from "../../features/cart/cartSlice"
 
 
 
 
 export default function index() {
   const products = useSelector((state) => state.products.products)
+  const cartItems = useSelector((state) => state.cart.cartItems)
   const [productDetail, setProductDetail] = useState({})
+  const [quantity, setQuantity] = useState(1)
+
+  const dispatch = useDispatch()
   const { id } = useParams()
 
+  const itemQuantity = +quantity
+
   useEffect(() => {
-    const product = products.find((prod) => prod.id === id )
+    const product = products.find((prod) => prod.id === +id )
     setProductDetail(product)
-  }, [])
+  }, [id])
+
+  useEffect(() => {
+    dispatch(updateTotal())
+  }, [cartItems, dispatch])
 
   const starStyle = "text-[24px]"
 
+  const onInputChangeHandler = (event) => {
+    setQuantity(event.target.value)
+  }
 
   const onAddToCartHandler = () => {
-
+    dispatch(addToCart({ productDetail, itemQuantity }))
   }
 
   return (
@@ -37,16 +51,16 @@ export default function index() {
         lg:gap-7 xl:gap-12 mx-auto mt-12">
           <img
             src={productDetail.image}
-            alt={productDetail.product}
+            alt={productDetail.name}
             className="w-[100%] md:w-[60%] lg:w-[65%] object-cover border border-gray-200"
           />
           <section className="w-[100%] md:w-[40%] lg:w-[35%] lg:mt-8 2xl:mt-0">
             <h1 className="text-2xl 2xl:text-[32px] tracking-[-0.05rem] font-bold font-SG
               leading-[33.6px] mt-7 md:mt-0">
-              {productDetail.product}
+              {productDetail.name}
             </h1>
             <div className="mt-5 text-2xl 2xl:text-[32px] font-SG font-bold leading-[33.6px]">
-              {productDetail.price}
+              {`$ ${productDetail.price} USD`}
             </div>
 
             <div className="mt-6">
@@ -75,10 +89,13 @@ export default function index() {
 
             <Select
               name={productDetail.product}
+              quantity={quantity}
+              onInputChangeHandler={onInputChangeHandler}
             />
             <Button
               className="mt-3 bg-primary-color text-white
-              py-2 2xl:py-3 px-6 font-SG w-[100%] rounded shadow-button-shadow mb-3"
+              py-2 2xl:py-3 px-6 font-SG w-[100%] rounded shadow-button-shadow mb-3
+              hover:opacity-90"
               onClick={onAddToCartHandler}
             >
               ADD TO CART

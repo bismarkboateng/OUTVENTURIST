@@ -3,17 +3,13 @@ import { useState } from "react"
 import { waists, sizes } from "./option-data"
 
 
-export default function index({ name }) {
+export default function index({ name, quantity, onInputChangeHandler }) {
   const [selectedOption, setSelectedOption] = useState("")
-  const [quantity, setQuantity] = useState("1")
 
   const onSelectOptionHandler = (event) => {
     setSelectedOption(event.target.value)   
   }
 
-  const onInputChangeHandler = (event) => {
-    setQuantity(event.target.value)
-  }
 
   return (
     <section className="mt-7">

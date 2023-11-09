@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import { Banner, Button } from ".."
 import { Hero, LineBow, LineBow01 } from "../../assets"
 
@@ -43,13 +45,15 @@ export default function index() {
               w-[98%] md:w-[75%] leading-6 mt-5">
               We're passionate about the outdoors and believe that every adventure deserves the best gear.
             </p>
-            <Button
-              className="text-base font-SG text-white font-semibold
-              border-2 border-white py-3 px-6 bg-transparent rounded
-              mt-6 cursor-pointer"
-            >
-              SHOP NOW
-            </Button>
+            <Link style={{ textDecoration: "none" }} to={"/shop-all-products"}>
+              <Button
+                className="text-base font-SG text-white font-semibold
+                border-2 border-white py-3 px-6 bg-transparent rounded
+                mt-6 cursor-pointer"
+              >
+                SHOP NOW
+              </Button>
+            </Link>
           </div>
         </section>
 
