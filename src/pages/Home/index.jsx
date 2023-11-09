@@ -2,6 +2,7 @@ import { useSelector } from "react-redux"
 
 import { Navbar, Herosection, ProductCards, Order } from "../../components"
 
+import { Navbar, Herosection, Activity } from "../../components"
 
 
 export default function index() {
@@ -11,7 +12,6 @@ export default function index() {
     <main>
       <Navbar />
       <Herosection />
-
       <section className="w-[90%] 2xl:w-[65%] mt-20 mx-auto">
         <div className="flex flex-row gap-3 items-center">
           <h1 className="text-primary-color text-2xl font-SG font-bold leading-[33.6px]">
@@ -29,6 +29,7 @@ export default function index() {
           activity
         </div>
       </section>
+      <Activity />
     </main>
   )
 }
