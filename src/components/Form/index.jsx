@@ -1,6 +1,5 @@
 import { RiGoogleFill } from "react-icons/ri"
 import { Button } from ".."
-import { Diversity2Outlined } from "@mui/icons-material"
 
 
 
@@ -17,6 +16,7 @@ export default function index(props) {
               </label> <br />
               <input
                 type="email"
+                name="email"
                 value={props.email}
                 onChange={props.onEmailChange}
                 className="mt-2 py-2 border border-secondary-color
@@ -32,6 +32,7 @@ export default function index(props) {
               </label> <br />
               <input
                 type="password"
+                name="password"
                 value={props.password}
                 onChange={props.onPasswordChange}
                 className="mt-2 py-2 border border-secondary-color

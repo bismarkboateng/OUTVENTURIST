@@ -1,8 +1,92 @@
+import { useState } from "react"
+
+import { Logo } from "../../assets"
+import { Form } from "../../components"
+
 
 export default function index() {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+  })
+
+
+  const onInputChangeHandler = (event) => {
+    const { name, value } = event.target
+
+    setUser(prevUser => ({...prevUser, [name]: value}))
+  }
+
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault()
+    console.log(user)
+    console.log("Creating...")
+  }
+
   return (
-   <section>
-        Sign up component
-   </section>
+    <section className="w-[90%] mx-auto">
+        <div className="flex flex-row 
+          justify-between items-center mt-3">
+
+          <img
+            src={Logo}
+            alt="logo"
+            className="w-10 md:w-12 h-10 md:h-12 object-cover ml-2"
+          />
+
+          <div className="flex flex-row items-center gap-2">
+            <span className="hidden md:block
+              font-SG text leading-6">
+              Don't have an account?
+            </span>
+
+            <p className="text-base font-SG underline cursor-pointer">
+              Log In
+            </p>
+          </div>
+
+        </div>
+
+        <div className="md:w-[68%] mx-auto lg:w-[45%] xl:w-[40%] 2xl:w-[28%]
+          mt-[10%] lg:mt-[10%] md:mt-[23%]">
+          <h1 className="text-2xl font-SG text-primary-color 
+            font-bold leading-[33.6px] trakcing-[-0.8px] text-center
+            xl:text-[32px]">
+            Create Account
+          </h1>
+          <p className="text-base lg:text-lg font-SG leading-6 text-center mt-4
+            ">
+            Lorem ipsum dolor sit amet adipiscing elit. 
+          </p>
+          <Form
+            email={user.email}
+            passwowrd={user.password}
+            onEmailChange={onInputChangeHandler}
+            onPasswordChange={onInputChangeHandler}
+            onSubmit={onSubmitHandler}
+            text1="CREATE ACCOUNT"
+            text2="SIGN UP WITH GOOGLE"
+          >
+          <div className="mb-6">
+            <label htmlFor="email"
+              className="text-base font-SG leading-6"
+            >
+              Name*
+            </label> <br />
+            <input
+              type="text"
+              name="name"
+              value={user.name}
+              onChange={onInputChangeHandler}
+              className="mt-2 py-2 border border-secondary-color
+              outline-none rounded-md px-[10px] text-base w-[100%]"
+            />
+          </div>
+          </Form>
+        </div>
+
+    </section>
   )
 }
