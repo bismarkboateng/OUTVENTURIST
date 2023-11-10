@@ -13,8 +13,6 @@ export const navigate = [
 ]
 
 export const account = [
-    { title: "Log In", id:Math.random() },
-    { title: "Create Account", id:Math.random() },
     { title: "Licenses & Assets", id:Math.random() },
     { title: "Styleguide", id:Math.random() },
     { title: "Changelog", id:Math.random() },

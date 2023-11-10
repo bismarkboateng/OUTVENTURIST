@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { createPortal } from "react-dom"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
@@ -13,12 +13,15 @@ import { removeFromCart } from "../../features/cart/cartSlice"
 export default function index(props) {
   const cartItems = useSelector((state) => state.cart.cartItems)
   const total = useSelector((state) => state.cart.total)
+
   const [onCheckout, setOnCheckout] = useState(false)
   const dispatch = useDispatch()
 
   const onCheckoutHandler = () => {
     setOnCheckout(true)
   }
+
+
 
   return createPortal(
     <section 

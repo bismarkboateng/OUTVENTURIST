@@ -31,6 +31,10 @@ export default function index() {
     dispatch(updateTotal())
   }, [cartItems, dispatch])
 
+  // useEffect(() => {
+    
+  // }, [])
+
   const starStyle = "text-[24px]"
 
   const onInputChangeHandler = (event) => {

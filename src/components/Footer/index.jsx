@@ -4,6 +4,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Link } from 'react-router-dom';
 
 const index = () => {
     const linkstyles='text-sm py-2 hover:text-gray-400 transition duration-500 ease-in-out cursor-pointer';
@@ -48,6 +49,18 @@ const index = () => {
           <div>
           <p className ={ptag}>Account</p>
               <ul>
+                <Link style={{ textDecoration: "none"}} to={"/account/log-in"}>
+                  <li className={linkstyles}>
+                    Login
+                  </li>
+                </Link>
+
+                <Link style={{ textDecoration: "none"}} to={"/account/create-account"}>
+                  <li className={linkstyles}>
+                    Create Account
+                  </li>
+                </Link>
+                
                 {account.map((item) => (
                   <li key={item.id}
                     className={linkstyles}

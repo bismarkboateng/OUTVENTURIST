@@ -3,7 +3,11 @@ import { useEffect } from "react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-import { Home, New, Shop, Productdetail, Contact, Watersports } from "./pages"
+import { 
+  Home, New, Shop, Productdetail,
+  Contact, Watersports, Login,
+  Signup
+} from "./pages"
 
 export default function App() {
   useEffect(() => {
@@ -24,6 +28,8 @@ export default function App() {
       <Route path="/shop" element={<Shop />} />
       <Route path="/product-detail/:id" element={<Productdetail />} />
       <Route path="/watersports" element={<Watersports />} />
+      <Route path="/account/log-in" element={<Login />} />
+      <Route path="/account/create-account" element={<Signup />} />
     </Routes>
   )
 }

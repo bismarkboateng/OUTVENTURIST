@@ -9,6 +9,7 @@ import {
 export default function index() {
   const product = useSelector((state) => state.products.products)
   const products = product.slice(0, 3)
+  
   return (
     <main>
       <Navbar />
