@@ -1,6 +1,6 @@
 <h2><strong>Outventurist</strong></h2>
 <br >
-<img src="medium-image.png" width="100%" alt="medium landing page" />
+<img src="home.png" width="100%" alt="medium landing page" />
 <hr >
 
 <h4>Description</h4>
