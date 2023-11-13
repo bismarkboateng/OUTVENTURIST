@@ -1,8 +1,24 @@
-# React + Vite
+<h2><strong>Outventurist</strong></h2>
+<br >
+<img src="medium-image.png" width="100%" alt="medium landing page" />
+<hr >
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h4>Description</h4>
+We're passionate about the outdoors and <br >
+believe that every adventure deserves the best gear.
+<br >
 
-Currently, two official plugins are available:
+<h4>Installation Guide</h4>
+I'll assume you already have <strong>Node</strong> installed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Start by cloning the repo:
+
+```
+https://github.com/bismarkboateng/OUTVENTURIST.git
+cd OUTVENTURIST
+yarn
+yarn dev
+```
+
+select the link running on your development server to preview<br>
+the application

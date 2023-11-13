@@ -1,9 +1,28 @@
 import { RiGoogleFill } from "react-icons/ri"
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+
 import { Button } from ".."
 
 
 
 export default function index(props) {
+  const navigate = useNavigate()
+  const auth = getAuth()
+  const provider = new GoogleAuthProvider()
+
+  const onGoogleHandler = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user
+        localStorage.setItem("user", JSON.stringify(user))
+        navigate("/shop-all-products")
+      }).catch((error) => {
+        const errorMessage = error.message
+        alert("Error signing up: ", errorMessage)
+      })
+  }
+
   return (
     <section className="mt-10">
         <form onSubmit={props.onSubmit}>
@@ -49,6 +68,7 @@ export default function index(props) {
           </Button>
 
           <div
+            onClick={onGoogleHandler}
             className="text-primary-color font-semibold border-2
             border-primary-color py-3 w-[100%]
             flex flex-row items-center justify-center gap-3 mt-4"

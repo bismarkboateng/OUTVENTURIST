@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, Fragment } from "react"
 import { createPortal } from "react-dom"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
@@ -60,8 +60,8 @@ export default function index(props) {
             (
             <div className="p-3 rounded bg-white w-[100%]">
                 {cartItems.map(item => (
-                <>
-                    <div key={item.id} className="flex flex-row gap-3 
+                <Fragment key={item.id}>
+                    <div className="flex flex-row gap-3 
                         border-b border-gray-200 mb-3"
                     >
                         <img
@@ -82,7 +82,7 @@ export default function index(props) {
                             <p className="text-xs font-SG text-gray-500 mt-1">Qty: {item.quantity}</p>
                         </div>
                     </div>
-                </>
+                </Fragment>
                 ))}
                 <div className="w-[95%] mx-auto">
                     Subtotal: <strong>$ {total.toFixed(2)}</strong>
