@@ -45,18 +45,20 @@ export const cartSlice = createSlice({
 
             setItemFunc(state.cartItems.map(item => item), state.total, state.quantity)
         },
-
+        
         removeFromCart: (state, action) => {
-            let tempItem 
-            tempItem = state.cartItems.find(item => item.id === action.payload.id)
-            if ((state.quantity == 0) || (tempItem.quantity == 0)) {
-                state.cartItems = state.cartItems.filter(item => item.id !== tempItem.id)
-            } else {
-                state.quantity--
-                tempItem.quantity > 0 && tempItem.quantity--
+            const cartItemIndex = action.payload.id
+            let tempItem = state.cartItems.find(item => item.id === cartItemIndex)
+
+            state.cartItems = state.cartItems.filter(cartItem => cartItem.id !== cartItemIndex)
+
+            if (state.cartItems.length >= 0) {
+                state.quantity -= tempItem.quantity
             }
+
             setItemFunc(state.cartItems.map(item => item), state.total, state.quantity)
         },
+
         updateTotal: (state) => {
             let total = 0
 
