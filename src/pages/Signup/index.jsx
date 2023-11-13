@@ -1,10 +1,17 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { useNavigate } from "react-router-dom"
 
+import { app } from "../../utils/firebaseConfig"
 import { Logo } from "../../assets"
 import { Form } from "../../components"
 
 
 export default function index() {
+  const navigate = useNavigate()
+  const auth = getAuth();
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -14,15 +21,25 @@ export default function index() {
 
   const onInputChangeHandler = (event) => {
     const { name, value } = event.target
-
     setUser(prevUser => ({...prevUser, [name]: value}))
   }
 
-
+ 
   const onSubmitHandler = (event) => {
     event.preventDefault()
-    console.log(user)
-    console.log("Creating...")
+
+    createUserWithEmailAndPassword(auth, user.email, user.password)
+      .then((userCredential) => {
+        const userResponse = userCredential.user
+        localStorage.setItem("user", JSON.stringify(userResponse))
+        localStorage.setItem("details", JSON.stringify(user))
+        navigate("/account/log-in")
+      })
+      .catch((error) => {
+        const errorMessage = error.message
+        alert("Error creating account : ", errorMessage)
+
+      });
   }
 
   return (
@@ -42,9 +59,11 @@ export default function index() {
               Don't have an account?
             </span>
 
-            <p className="text-base font-SG underline cursor-pointer">
-              Log In
-            </p>
+            <Link to={"/account/log-in"} style={{ textDecoration: "none"}}>
+              <p className="text-base font-SG underline cursor-pointer">
+                Log In
+              </p>
+            </Link>
           </div>
 
         </div>

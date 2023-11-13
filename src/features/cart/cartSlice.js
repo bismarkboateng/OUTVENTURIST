@@ -49,7 +49,7 @@ export const cartSlice = createSlice({
         removeFromCart: (state, action) => {
             let tempItem 
             tempItem = state.cartItems.find(item => item.id === action.payload.id)
-            if ((state.quantity == 0) && (tempItem.quantity == 0)) {
+            if ((state.quantity == 0) || (tempItem.quantity == 0)) {
                 state.cartItems = state.cartItems.filter(item => item.id !== tempItem.id)
             } else {
                 state.quantity--

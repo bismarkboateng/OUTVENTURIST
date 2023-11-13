@@ -1,5 +1,10 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
+import { useNavigate } from "react-router-dom"
 
+
+import { app } from "../../utils/firebaseConfig"
 import { Logo } from "../../assets"
 import { Form } from "../../components"
 
@@ -7,6 +12,8 @@ import { Form } from "../../components"
 export default function index() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const navigate = useNavigate()
+  const auth = getAuth()
 
 
   const onEmailChangeHandler = (event) => {
@@ -19,7 +26,15 @@ export default function index() {
 
   const onSubmitHandler = (event) => {
     event.preventDefault()
-    console.log("Log in button")
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user
+      navigate("/shop-all-products")
+    })
+    .catch((error) => {
+      const errorMessage = error.message
+      alert("Error signing in: ", errorMessage)
+    });
   }
 
   return (
@@ -39,9 +54,11 @@ export default function index() {
               Don't have an account?
             </span>
 
-            <p className="text-base font-SG underline cursor-pointer">
-              Create Account
-            </p>
+            <Link to={"/account/create-account"} style={{ textDecoration: "none"}}>
+              <p className="text-base font-SG underline cursor-pointer">
+                Create Account
+              </p>
+            </Link>
           </div>
 
         </div>
