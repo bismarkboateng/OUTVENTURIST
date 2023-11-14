@@ -6,7 +6,7 @@ import 'aos/dist/aos.css'
 import { 
   Home, New, Shop, Productdetail,
   Contact, Watersports, Login,
-  Signup
+  Signup,TAC
 } from "./pages"
 
 export default function App() {
@@ -30,6 +30,7 @@ export default function App() {
       <Route path="/watersports" element={<Watersports />} />
       <Route path="/account/log-in" element={<Login />} />
       <Route path="/account/create-account" element={<Signup />} />
+      <Route path="/terms" element={<TAC />} />
     </Routes>
   )
 }
