@@ -21,7 +21,7 @@ export const account = [
 
 export const care = [
     { title: "Delivery", id:Math.random() },
-    { title: "Returns", id:Math.random() },
+    { title: "Returns", id:Math.random(), link: "/care/returns-policy" },
     { title: "Size Guide", id:Math.random() },
     { title: "Contact", id:Math.random() },
     

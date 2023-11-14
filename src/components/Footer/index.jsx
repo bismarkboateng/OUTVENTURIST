@@ -83,7 +83,9 @@ const index = () => {
                 <li key={item.id}
                   className={linkstyles}
                 >
-                  {item.title}
+                  <Link to={item.link}>
+                    {item.title}
+                  </Link>
                 </li>))}
             </ul>
           </div>
@@ -128,7 +130,9 @@ const index = () => {
       <Link to={"/privacy-policy"} style={{ textDecoration: "none"}}>
         <div className='underline hover:cursor-pointer text-sm'>Privacy Policy</div>
       </Link>
-      <div className='underline hover:cursor-pointer text-sm'>Terms and Conditions</div>
+      <Link to={"/terms"} style={{ textDecoration: "none"}}>
+        <div className='underline hover:cursor-pointer text-sm'>Terms and Conditions</div>
+      </Link>
       <div className='underline hover:cursor-pointer text-sm'>Powered by Webflow</div>
     </div>
     <div className='flex flex-row gap-3'>

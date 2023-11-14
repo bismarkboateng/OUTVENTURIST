@@ -94,15 +94,15 @@ export default function index() {
             </Swiper>
             <p className="relative right-0 top-0 text-base text-primary-color font-medium
                 flex flex-row gap-1 ml-auto items-center justify-end font-SG
-                mt-8 mb-12 mr-4 lg:mr-10"
+                mt-8 mb-12 mr-4 lg:mr-10 2xl:mr-[20%] cursor-pointer"
                onClick={onSortClickHandler}    
             >
               <span>Sort by</span>
               <MdKeyboardArrowDown fontSize={25} />
             </p>
             { onSort && (
-                <ul className="absolute right-[3.5%] lg:right-[3%] top-[5.5%] lg:top-[20%] bg-white z-[50]
-                shadow-card p-[0.5rem] rounded"
+                <ul className="absolute right-[3.5%] 2xl:right-[20%] lg:right-[3%]
+                top-[5.5%] lg:top-[20%] bg-white z-[50] shadow-card p-[0.5rem] rounded"
                     data-aos="fade-up"
                 >
                     <li className={liStyles}>Name <span className="font-bold">A to Z</span></li>
@@ -111,7 +111,7 @@ export default function index() {
                     <li className={liStyles}>Price <span className="font-bold">High to Low</span></li>
                 </ul>  
             )}
-            <section className="mb-10 w-[90%] mx-auto">
+            <section className="mb-10 w-[90%] 2xl:w-[65%] mx-auto">
                 <ProductCards
                     products={data}
                 />
