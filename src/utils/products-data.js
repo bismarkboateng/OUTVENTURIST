@@ -5,6 +5,7 @@ export const products = [
         price: 39.99,
         delivery: "FREE DELIVERY",
         stars: "3.5",
+        tag: "womans, mens",
         id: 1
     },
     {
@@ -14,6 +15,7 @@ export const products = [
         price:39.99,
         delivery: "FREE DELIVERY",
         sale: "SALE",
+        tag: "mens",
         id: 2
     },
     { 
@@ -23,6 +25,7 @@ export const products = [
         price:89.99,
         delivery: "FREE DELIVERY",
         sale: "SALE",
+        tag: "mens",
         id: 3
     },
     { 
@@ -31,6 +34,7 @@ export const products = [
         price:89.99, 
         delivery: "FREE DELIVERY",
         sale: "SALE",
+        tag: "rucksacks",
         id: 4
     },
     { 
@@ -38,6 +42,7 @@ export const products = [
         name:'Hiking Boots',
         price:179.99,
         delivery: "FREE DELIVERY",
+        tag: "mens,footwear",
         id: 5
     },
     { 
@@ -45,12 +50,14 @@ export const products = [
         name:'TrailMaster Hiking Boots',
         price:179.99,
         delivery: "FREE DELIVERY",
+        tag: "mens,footwear",
         id: 6
     },
     {   image:'https://assets.website-files.com/64515ac135d5d28b9772c12b/64522ce9647c2413a39071ef_Boots%203-min.png',
         name:'TrailMaster Pro Hiking Boots',
         price:179.99,
         delivery: "FREE DELIVERY",
+        tag: "mens,footwear",
         id: 7
     }
 ]
