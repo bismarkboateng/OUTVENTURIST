@@ -42,7 +42,9 @@ const index = () => {
                   <li key={item.id}
                     className={linkstyles}
                   >
-                    {item.title}
+                    <Link to={item.link} style={{ textDecoration: "none"}}>
+                      {item.title}
+                    </Link>
                   </li>))}
               </ul>
           </div>

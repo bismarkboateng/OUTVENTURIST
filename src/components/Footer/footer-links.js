@@ -1,9 +1,9 @@
 export const shop = [
-    { title: "By activity", id:Math.random() },
-    { title: "Woman", id:Math.random() },
-    { title: "Men", id:Math.random() },
-    { title: "Rucksacks", id:Math.random() },
-    { title: "Footwear", id:Math.random() },
+    { title: "By activity", id:Math.random(), },
+    { title: "Woman", id:Math.random(), link: "/category/womans" },
+    { title: "Men", id:Math.random(), link: "/category/mens" },
+    { title: "Rucksacks", id:Math.random(), link: "/category/rucksacks" },
+    { title: "Footwear", id:Math.random(), link: "/category/footwear" },
 ]
 
 export const navigate = [
