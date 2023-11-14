@@ -1,10 +1,12 @@
-import { shop , navigate, account ,care } from './footer-links'
+import { Link } from 'react-router-dom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Link } from 'react-router-dom';
+
+import { shop , navigate, account ,care } from './footer-links'
+
 
 const index = () => {
     const linkstyles='text-sm py-2 hover:text-gray-400 transition duration-500 ease-in-out cursor-pointer';
@@ -121,7 +123,9 @@ const index = () => {
       flex flex-col-reverse w-[90%] lg:items-center 2xl:w-[65%] mx-auto mt-5'>
     <div className='flex flex-col-reverse gap-y-4 py-8 md:flex-row md:gap-x-8'>
       <div className='text-sm font-SG'>© Outventurist. All rights reserved.</div>
-      <div className='underline hover:cursor-pointer text-sm'>Privacy Policy</div>
+      <Link to={"/privacy-policy"} style={{ textDecoration: "none"}}>
+        <div className='underline hover:cursor-pointer text-sm'>Privacy Policy</div>
+      </Link>
       <div className='underline hover:cursor-pointer text-sm'>Terms and Conditions</div>
       <div className='underline hover:cursor-pointer text-sm'>Powered by Webflow</div>
     </div>
