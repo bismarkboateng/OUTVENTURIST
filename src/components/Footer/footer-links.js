@@ -9,7 +9,7 @@ export const shop = [
 export const navigate = [
     { title: "Home", id:Math.random() },
     { title: "New in", id:Math.random() },
-    { title: "Store Locator", id:Math.random() },
+    { title: "Store Locator", id:Math.random(), link: "/stores" },
 ]
 
 export const account = [
